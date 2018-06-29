@@ -7,14 +7,13 @@ package com.musiclibrary.musiclibraryapi.dto;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-/**
- *
- * @author Mehdi
- */
+
 /**
  *
  * @author Mehdi
@@ -25,12 +24,23 @@ import lombok.ToString;
 public class UserDTO {
 
     private Long id;
+    
+    @NotNull
+    @NotEmpty(message = "Please fill the creation date field")
     private String creationDate;
+    
     private LocalDateTime creationDateLocalDateTime;
+    
+    @NotNull
+    @NotEmpty(message = "Please fill the first name field")
     private String firstName;
+
     private Boolean isLogged;
     private String lastLoginDate;
     private LocalDateTime lastLoginDateLocalDateTime;
+    
+    @NotNull
+    @NotEmpty(message = "Please fill the last name field")
     private String lastName;
 
     public UserDTO(Long id, String creationDate,LocalDateTime creationDateLocalDateTime, String firstName, Boolean isLogged, String lastLoginDate, LocalDateTime lastLoginDateLocalDateTime, String lastName) {
