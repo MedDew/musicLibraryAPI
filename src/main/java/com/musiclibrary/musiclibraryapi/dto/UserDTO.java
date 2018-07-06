@@ -25,8 +25,9 @@ public class UserDTO {
 
     private Long id;
     
-    @NotNull
-    @NotEmpty(message = "Please fill the creation date field")
+//    USELESS THIS FIELD IS READONLY
+//    @NotNull
+//    @NotEmpty(message = "Please fill the creation date field")
     private String creationDate;
     
     private LocalDateTime creationDateLocalDateTime;
@@ -78,8 +79,20 @@ public class UserDTO {
 
     private LocalDateTime convertFromStringToLocalDateTime(String dateToConvert) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
-        LocalDateTime localDateTime = LocalDateTime.parse(dateToConvert, formatter);
-
+        System.out.println("dateToConvert: "+dateToConvert);
+        LocalDateTime localDateTime = null;
+        if(dateToConvert != null)
+        {
+            localDateTime = LocalDateTime.parse(dateToConvert, formatter);
+        }
+        else
+        {
+            localDateTime = LocalDateTime.now();
+            System.out.println("localDatetime when NULL : "+localDateTime.format(formatter));
+            String currentDateTime = localDateTime.format(formatter);
+           localDateTime = LocalDateTime.parse(currentDateTime, formatter);
+        }
+        
         return localDateTime;
     }
 
