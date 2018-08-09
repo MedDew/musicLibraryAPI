@@ -27,4 +27,12 @@ public class GenreDTO
     @NotNull
     @NotEmpty(message = "Please select a genre")
     protected String genreName;
+    
+    protected String errorMessage;
+    
+    public GenreDTO(long Id, String genreName)
+    {
+        this.Id = Id;
+        this.genreName = genreName;
+    }
 }
