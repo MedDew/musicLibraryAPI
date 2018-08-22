@@ -28,6 +28,8 @@ public class CategoryDTO
     @NotEmpty(message = "Please select a category")
     private String categoryName;
     
+    private String errorMessage;
+    
     public CategoryDTO(String categoryName)
     {
         this.categoryName = categoryName;
