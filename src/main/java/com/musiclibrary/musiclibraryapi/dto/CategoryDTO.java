@@ -39,7 +39,6 @@ public class CategoryDTO
     public CategoryDTO(long Id, String categoryName)
     {
         this.Id = Id;
-        this.categoryName = categoryName;
-        
+        this.categoryName = categoryName;        
     }
 }
