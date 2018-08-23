@@ -30,6 +30,7 @@ public class CategoryDTO
     
     private String errorMessage;
     
+    
     public CategoryDTO(String categoryName)
     {
         this.categoryName = categoryName;
