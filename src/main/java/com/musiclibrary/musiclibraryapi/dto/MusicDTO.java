@@ -69,7 +69,17 @@ public class MusicDTO
     private LocalDate convertFromStringToLocalDate(String dateToConvert)
     {
         DateTimeFormatter formatter  = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        LocalDate localDate = LocalDate.parse(dateToConvert, formatter);
+        
+        LocalDate localDate = null;
+        //PREVENT NullPointerException
+        if(dateToConvert == null)
+        {
+            localDate = LocalDate.parse(this.releaseYear, formatter);
+        }
+        else
+        {
+            localDate = LocalDate.parse(dateToConvert, formatter);
+        }
         
         return localDate;
     }
