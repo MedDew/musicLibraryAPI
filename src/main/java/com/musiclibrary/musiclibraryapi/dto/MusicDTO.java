@@ -42,9 +42,10 @@ public class MusicDTO
     @NotEmpty(message = "Please fill the release year field")
     private String releaseYear;
     
-    @NotNull(message = "Please cselect a category") 
-    private long categoryId;
+    @NotNull(message = "Please select a category") 
+    private Long categoryId;
     
+    @NotEmpty(message = "Please select one or more genre(s)") 
     private Set<Long> genres;
     
     
