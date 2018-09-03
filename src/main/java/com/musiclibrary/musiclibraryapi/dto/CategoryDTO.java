@@ -22,7 +22,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CategoryDTO 
 {
-    private long Id;
+    private Long Id;
     
     @NotNull
     @NotEmpty(message = "Please select a category")
